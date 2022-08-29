@@ -7,8 +7,11 @@ template <typename T> void basicFun1(T x);
 template <typename T1, typename T2> void basicFun2(T1 x, T2 y);
 template <typename T1, typename T2 = int> void basicFun3(T1 x, T2 y);
 template <typename T> void BasicFun4(T x, int y);
-template <> void basicFun1<char>(char x);
 template <typename T> T findGreater(T x, T y);
+template <> void basicFun1<char>(char x);
+template <typename T> void templateoverload(T x);
+template <typename T> void templateoverload(T x, T y);
+template <typename T1, typename T2, typename T3> void templateoverload(T1 x, T2 y, T3 z);
 
 
 //template function definition
@@ -62,7 +65,7 @@ template <> void basicFun1<char>(char x)
     cout << "value at x : " << x<<endl;
 }
 
-//7. Overloading the generic function template for number of parameter passed
+//7.(1) Overloading the generic function template for number of parameter passed
 
 template <typename T>
 void templateoverload(T x)
@@ -71,6 +74,7 @@ void templateoverload(T x)
     cout << "value at x : " << x << endl;
 }
 
+//7.(2) overload template function with two parameter
 template <typename T>
 void templateoverload(T x,T y)
 {
@@ -78,6 +82,7 @@ void templateoverload(T x,T y)
     cout << "value at x : " << x<<" | value at y : "<<y << endl;
 }
 
+//7.(3) overload template function with three different parameter
 template <typename T1,typename T2,typename T3>
 void templateoverload(T1 x, T2 y,T3 z)
 {
